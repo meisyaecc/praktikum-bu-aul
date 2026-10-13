@@ -1,22 +1,30 @@
-// 1. Memilih elemen
-const judul = document.getElementById("judul");
-const kelas = document.getElementById("kelas");
-kelas.style.fontSize = "30px";
+// ===== querySelector: memilih SATU elemen =====
+const judul = document.querySelector("#judul");
+judul.style.color = "darkblue";
  
-// 2. Melihat elemen di Console
-console.log(judul);
-console.log(kelas);
+const kartuPertama = document.querySelector(".kartu");
+console.log(kartuPertama);
  
-// 3. Mengubah isi teks
-judul.textContent = "Judul Sudah Diubah!";
+const hargaPertama = document.querySelector(".kartu .harga");
+hargaPertama.style.fontWeight = "bold";
  
-// 4. Mengubah warna
-judul.style.color = "crimson";
+const menuPertama = document.querySelector(".menu li:first-child");
+menuPertama.style.color = "red";
  
-// 5. Mengubah isi dengan tag HTML
-sapaan.innerHTML = "Halo, saya sedang <b>belajar DOM</b>!";
+// ===== querySelectorAll: memilih BANYAK elemen =====
+const semuaKartu = document.querySelectorAll(".kartu");
+console.log(semuaKartu.length);
  
-// 6. Mencoba id yang tidak ada
-const hantu = document.getElementById("tidakada");
-console.log(hantu);
-hantu.textContent = "Hallo";
+semuaKartu.forEach(function (kartu) {
+  kartu.style.border = "2px solid teal";
+  kartu.style.padding = "10px";
+  kartu.style.margin = "10px 0";
+});
+ 
+const semuaHarga = document.querySelectorAll(".harga");
+semuaHarga.forEach((harga) => {
+  harga.style.color = "green";
+});
+ 
+const semuaMenu = document.querySelectorAll(".menu li");
+console.log(semuaMenu.length);
